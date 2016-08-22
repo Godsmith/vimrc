@@ -99,3 +99,5 @@ noremap <C-l> <C-w>l
 nnoremap <leader>w <C-w>v<C-w>l
 
 :au FocusLost * :wa " Save all when vim loses focus
+
+nnoremap <leader>ev <C-w>v<C-w>l :e $MYVIMRC<cr>
