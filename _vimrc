@@ -23,6 +23,9 @@ syntax on
 
 autocmd! bufwritepost $MYVIMRC source $MYVIMRC   " auto reload vimrc when editing it
 
+" set leader to ,
+let mapleader=","
+let g:mapleader=","
 	
 " Editing behaviour {{{
 set showmode                    " always show what mode we're currently editing in
@@ -85,3 +88,13 @@ set ruler                       " always show current position
 
 set guifont=Consolas
 colors slate
+
+
+" Easy window navigation
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+nnoremap <leader>w <C-w>v<C-w>l
+
+:au FocusLost * :wa " Save all when vim loses focus
