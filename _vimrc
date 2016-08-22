@@ -18,6 +18,7 @@ Plugin 'tpope/vim-repeat'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+syntax on
 
 
 autocmd! bufwritepost $MYVIMRC source $MYVIMRC   " auto reload vimrc when editing it
