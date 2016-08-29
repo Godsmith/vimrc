@@ -23,10 +23,6 @@ syntax on
 
 autocmd! bufwritepost $MYVIMRC source $MYVIMRC   " auto reload vimrc when editing it
 
-" set leader to ,
-let mapleader=","
-let g:mapleader=","
-	
 " Editing behaviour {{{
 set showmode                    " always show what mode we're currently editing in
 set tabstop=4                   " a tab is four spaces
@@ -98,6 +94,6 @@ noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 nnoremap <leader>w <C-w>v<C-w>l
 
-:au FocusLost * :wa " Save all when vim loses focus
+autocmd BufLeave,FocusLost * silent! wall " Save all when vim loses focus
 
 nnoremap <leader>ev <C-w>v<C-w>l :e $MYVIMRC<cr>
