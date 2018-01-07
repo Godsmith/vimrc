@@ -1,2 +1,74 @@
-inoremap jk <Esc>`^
-inoremap kj <Esc>`^
+" SETTINGS
+
+" Merge vim * register and Windows clipboard
+set clipboard=unnamed
+set ignorecase
+set smartcase
+set incsearch
+
+" PLUGINS
+
+set surround
+
+
+" META
+
+" Reload .ideavimrc
+nnoremap <xpace>s :source ~/.ideavimrc<cr>
+
+
+" TAB NAVIGATION
+
+nnoremap <a-h> gT
+nnoremap <a-l> gt
+
+
+" INTER-FILE NAVIGATION
+
+nnoremap <space>e :action SearchEverywhere<cr>
+nnoremap <space>gt :action GotoTest<cr>
+nnoremap <Space>gc :action GotoClass<CR>
+nnoremap <Space>gf :action GotoFile<CR>
+
+
+" INFO
+
+nnoremap <space>u :action FindUsages<cr>
+nnoremap <space>f :action FileStructurePopup<cr>
+nnoremap <space>k :action HighlightUsagesInFile<cr>
+nnoremap <space>h :action QuickJavaDoc<cr>
+
+
+" REFACTORING
+
+" I tried a bunch of other shortcuts but didn't get them to work.
+" Map "Refactor this..." to Ctrl+T in Idea instead, it seems to always work.
+
+nnoremap <space>r :action RenameElement<cr>
+
+
+" EDITING 
+
+" Select all text
+nnoremap <Space>a ggVG
+
+
+" RUN AND DEBUG
+
+nnoremap \r :action RunClass<cr>
+nnoremap \R :action Run<cr>
+nnoremap \d :action DebugClass<cr>
+nnoremap \D :action Debug<cr>
+
+nnoremap <space>b :action ToggleLineBreakpoint<cr>
+
+
+" CHANGE VIM COMMANDS TO PYCHARM DEFAULTS
+
+" built-in navigation to navigated items works better
+nnoremap <c-o> :action Back<cr>
+nnoremap <c-i> :action Forward<cr>
+" but preserve ideavim defaults
+nnoremap g<c-o> <c-o>
+nnoremap g<c-i> <c-i>
+
